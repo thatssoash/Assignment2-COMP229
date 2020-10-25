@@ -34,7 +34,7 @@ router.get('/login', indexController.displayLoginPage);
 /* Post Processing Log In Page */
 router.post('/login', indexController.ProcessingLoginPage);
 
-/* GET Log In Register Page */
+/* GET Register Page */
 router.get('/register', indexController.displayRegisterPage);
 
 /* Post Processing Register Page */

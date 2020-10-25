@@ -19,7 +19,7 @@
                if(!confirm('Are You Sure?'))
                {
                    event.preventDefault();
-                   window.location.assign('/book-list');
+                   window.location.assign('/contact-list');
                }
            });
        }

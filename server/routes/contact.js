@@ -19,7 +19,7 @@ function requireAuth(req,res, next)
     next();
 }
 
-/* Get Route for our Book List Page */
+/* Get Route for our Contact List Page */
 
 router.get('/', contactController.displayContactList);
 
