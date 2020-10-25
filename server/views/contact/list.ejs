@@ -1,0 +1,47 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/mainnav.ejs %>
+
+<main class="container">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <h1><%= title %></h1>
+            <% if(typeof displayName == 'string' && displayName) { %>
+            <a href="/contact-list/add" class="btn btn-primary"role = "button">
+            <i class="fas-fa-plus-circle"></i>Add A Contact</a>
+            <% } %>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <thead class = "thead-dark">
+                    <tr class>
+                    <th class = "text-center">Contact Name</th>
+                    <th class = "text-center">Contact Number</th>
+                    <th class = "text-center">Contact Email Adress</th>
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                    <th class = "text-center"></th>
+                    <th class = "text-center"></th>
+                    <% } %>
+
+                </tr>
+                </thead>
+                <!-- Repeatable Row-->
+                <% for(let count = 0; count < ContactList.length; count++) { %>
+                        <tr>
+                            <td class = "text-center"><%= ContactList[count].name %></td>
+                            <td class = "text-center"><%= ContactList[count].number %></td>
+                            <td class = "text-center"><%= ContactList[count].email %></td>
+                            <% if(typeof displayName == 'string' && displayName) { %>
+                            <td class = "text-center"><a href="/contact-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary">Edit</a></td>
+                            <td class = "text-center"><a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger">Delete</a></td>
+                            <% } %>
+                        </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+    </main>
+
+<%- include ../partials/bottomnav.ejs %>
+
+<%- include ../partials/footer.ejs %>

@@ -62,7 +62,7 @@ module.exports.ProcessingLoginPage = (req, res, next) =>{
         if(!user)
         {
             req.flash('loginMessage', 'Authentication Error');
-            return res.direct('/login');
+            return res.redirect('/login');
         }
 
         req.login(user, (err) => {
@@ -70,7 +70,7 @@ module.exports.ProcessingLoginPage = (req, res, next) =>{
             if(err){
                 return next(err);
             }
-            return res.redirect('/book-list');
+            return res.redirect('/contact-list');
         });
     }) (req, res, next);
 }
@@ -124,7 +124,7 @@ module.exports.ProcessingRegisterPage = (req, res, next) =>{
             //redirect user and authenticate
 
             return passport.authenticate('local')(req,res, () => {
-                res.redirect('/book-list')
+                res.redirect('/contact-list')
             });
 
 
