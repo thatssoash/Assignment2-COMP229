@@ -6,7 +6,7 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
-//modules for Aunthentication
+//modules for Authentication
 
 let session = require('express-session');
 let passport = require('passport');
