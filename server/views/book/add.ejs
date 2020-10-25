@@ -1,0 +1,47 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/mainnav.ejs %>
+
+<!-- Add Content-->
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><% title %></h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Book Title</label>
+                    <input type="text" class="form-control" id="nameTextField" placeholder="Enter Title of Book" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorTextField">Book Author</label>
+                    <input type="text" class="form-control" id="authorTextField" 
+                    placeholder="Enter Author of Book" name="author" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descTextArea">Book Description</label>
+                    <textarea type="text" class="form-control" id="descTextArea" 
+                    placeholder="Enter Description of Book" name="Description" required>
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priceTextField">Book Price</label>
+                    <input type="number" class="form-control" id="priceTextField" placeholder="Enter Price of Book" name="Price" required>
+                </div>
+
+                <button class="btn btn-primary" type ="submit">
+                    <i class="fas fa-edit">Submit</i>
+                </button>
+
+                <a href="/book-list" class="btn btn-warning"><i class="fas fa-undo"></i>Cancel</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ../partials/bottomnav.ejs %>
+
+<%- include ../partials/footer.ejs %>
